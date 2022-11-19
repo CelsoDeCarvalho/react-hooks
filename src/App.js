@@ -1,11 +1,14 @@
-import './assets/styles/App.css';
+import './assets/styles/app.css';
+import { MainCard } from './components/MainCard';
+import { ThemeWidget } from './components/ThemeWidget';
 
 function App() {
   return (
-    <div className="App">
-
-    </div>
+    <main className="app-container">
+      <ThemeWidget/>
+      <MainCard />
+    </main>
   );
 }
 
-export default App;
+export { App };
