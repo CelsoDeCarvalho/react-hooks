@@ -4,19 +4,56 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #FFECEF;
+  background-color: var(--bg-color);
 }
 
 .main-card__container{
   width: 500px;
   height: 500px;
-  background-color: #372948;
+  background-color: var(--card-bg-color);
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
 }
 
-.widget-btn{
+.widget-container{
   position: absolute;
   top: 10px;
   right: 40px;
+}
+
+.widget-btn{
+  width: 60px;
+  height: 25px;
+  border-radius: 15px;
+  display: flex;
+  padding: 3px 3px;
+  align-items: center;
+  background-color: var(--card-bg-color);
+}
+
+.widget-btn button{
+  border-radius: 12.5px;
+  width: 25px;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  cursor: pointer;
+  border: none;
+  height: 100%;
+}
+
+.light{
+  justify-content: start;
+}
+
+.dark{
+  justify-content: end;
+}
+
+.light button{
+  background-color: var(--orange-bg-color);
+}
+
+.dark button{
+  background-color: gray;
 }
