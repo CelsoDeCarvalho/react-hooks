@@ -1,18 +1,26 @@
-import { memo, useContext } from "react";
+import { CircularProgress } from "@mui/material";
+import axios from "axios";
+import { memo, useContext, useEffect, useState } from "react";
 import { ThemeContext } from "../context/ThemeContext";
+import { useFetchUser } from "../hooks/useFetchUser";
 //We are using React.memo to
 //prevent unnecessary rendering
 //This component will render
 //only if they props change
 const MainCard = memo(() => {
-  const {theme} = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext);
 
-  //process.env.REACT_APP_URL
+  const {user,loading,error} = useFetchUser();
+
+  console.log(user)
 
   return (
     <section className="main-card__container">
-      <h1 className="theme-mode__title">{theme} mode activated {theme==="light"?"🌞":"🌒"}</h1>
+      <h1 className="theme-mode__title">{theme} mode activated {theme === "light" ? "🌞" : "🌒"}</h1>
+      <div className="user-info__area">
+        {loading?<CircularProgress/>:<>data</>}
+      </div>
     </section>
- )
+  )
 })
 export { MainCard }
