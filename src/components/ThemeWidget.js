@@ -53,20 +53,24 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 
 const ThemeWidget = () => {
 
-  const { setTheme } = useContext(ThemeContext);
+  const { setTheme,theme} = useContext(ThemeContext);
 
   const onThemeChange = event => {
-    if (event.target.checked)
+    if (event.target.checked) {
       setTheme("dark")
-    else
+      localStorage.setItem("theme", "dark");
+    } else {
       setTheme("light")
+      localStorage.setItem("theme", "light");
+    }
   }
 
+  console.log(theme)
 
   return (
     <section className='widget-container'>
       <FormControlLabel
-        control={<MaterialUISwitch sx={{ m: 1 }} onChange={onThemeChange} />}
+        control={<MaterialUISwitch sx={{ m: 1 }} onChange={onThemeChange} checked={theme==="dark"}/>}
       />
     </section>
   )

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import './assets/styles/app.css';
 import './assets/styles/colors.css'
 import { MainCard } from './components/MainCard';
@@ -14,9 +15,7 @@ function App() {
   //so here I'm creating a theme state and passing it as
   //context value that will be provided to all children
 
-  useEffect(() => {
-    localStorage.setItem("theme", theme);
-  }, [theme])
+  // const [searchParams, setSearchParams] = useSearchParams();
 
   return (
     <ThemeContext.Provider value={{ theme: theme, setTheme: setTheme }}>
