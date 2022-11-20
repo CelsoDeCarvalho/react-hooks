@@ -4,15 +4,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--bg-color);
 }
 
 .main-card__container{
   width: 500px;
   height: 500px;
-  background-color: var(--card-bg-color);
   border-radius: 10px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
 }
 
 .widget-container{
@@ -21,4 +18,18 @@
   right: 40px;
 }
 
+.dark{
+  background-color: var(--light-bg-primary);
+}
 
+.light .main-card__container{
+  background-color: var(--light-bg-secondary);
+}
+
+.dark{
+  background-color: var(--dark-bg-primary);
+}
+
+.dark .main-card__container{
+  background-color: var(--dark-bg-secondary);
+}

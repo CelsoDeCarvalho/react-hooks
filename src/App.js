@@ -12,12 +12,12 @@ function App() {
   //so here I'm creating a theme state and passing it as
   //context value that will be provided to all children
   return (
-    <main className="app-container">
-      <ThemeContext.Provider value={{ theme: theme, setTheme: setTheme }}>
+    <ThemeContext.Provider value={{ theme: theme, setTheme: setTheme }}>
+      <main className={`app-container ${theme}`}>
         <ThemeWidget />
         <MainCard />
-      </ThemeContext.Provider>
-    </main>
+      </main>
+    </ThemeContext.Provider>
   );
 }
 

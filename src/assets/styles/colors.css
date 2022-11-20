@@ -1,5 +1,6 @@
 :root{
-    --bg-color:#FFECEF;
-    --card-bg-color:#372948;
-    --orange-bg-color: #FFFF00;
+    --light-bg-primary:#DEF5E5;
+    --light-bg-secondary:#8EC3B0;
+    --dark-bg-primary:#864879;
+    --dark-bg-secondary:#1F1D36;
 }
