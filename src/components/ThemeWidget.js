@@ -1,5 +1,7 @@
 import { FormControlLabel, Switch } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import { useContext } from 'react';
+import { ThemeContext } from '../context/ThemeContext';
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   width: 62,
@@ -51,10 +53,19 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 
 const ThemeWidget = () => {
 
+  const { setTheme } = useContext(ThemeContext);
+
+  const onThemeChange = event => {
+    if (event.target.checked)
+      setTheme("dark")
+    else
+      setTheme("light")
+  }
+
   return (
     <section className='widget-container'>
       <FormControlLabel
-        control={<MaterialUISwitch sx={{ m: 1 }} />}
+        control={<MaterialUISwitch sx={{ m: 1 }} onChange={onThemeChange} />}
       />
     </section>
   )

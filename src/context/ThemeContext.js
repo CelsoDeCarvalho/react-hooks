@@ -1,9 +1,7 @@
 import {createContext} from "react";
 
-//Creating a context and initialing with
-//ligth theme cuz it will be the default
-//theme value
-const ThemeContext = createContext("light");
+//Creating a context
+const ThemeContext = createContext();
 
 //The ThemeProvider will provide value
 //for all children
