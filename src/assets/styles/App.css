@@ -21,39 +21,4 @@
   right: 40px;
 }
 
-.widget-btn{
-  width: 60px;
-  height: 25px;
-  border-radius: 15px;
-  display: flex;
-  padding: 3px 3px;
-  align-items: center;
-  background-color: var(--card-bg-color);
-}
 
-.widget-btn button{
-  border-radius: 12.5px;
-  width: 25px;
-  display: flex;
-  justify-content: center;
-  align-items:center;
-  cursor: pointer;
-  border: none;
-  height: 100%;
-}
-
-.light{
-  justify-content: start;
-}
-
-.dark{
-  justify-content: end;
-}
-
-.light button{
-  background-color: var(--orange-bg-color);
-}
-
-.dark button{
-  background-color: gray;
-}
