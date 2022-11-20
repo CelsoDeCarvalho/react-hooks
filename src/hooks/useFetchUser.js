@@ -14,7 +14,7 @@ const useFetchUser = () => {
         setLoading(true)
         await axios.get("https://randomuser.me/api")
             .then(response => {
-                setUser(response)
+                setUser(response.data.results[0])
             }).catch(error => {
                 setError(error)
             }).finally(() => {
