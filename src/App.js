@@ -9,7 +9,6 @@ function App() {
       <ThemeWidget/>
       <MainCard />
     </main>
-  );
-}
+  ); }
 
 export { App };
