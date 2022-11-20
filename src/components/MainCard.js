@@ -11,14 +11,14 @@ import { UserProfile } from "./UserProfile";
 const MainCard = memo(() => {
   const { theme } = useContext(ThemeContext);
 
-  const {user,loading,error} = useFetchUser();
+  const {user,loading,error,refetch} = useFetchUser();
 
   return (
     <section className="main-card__container">
       <h1 className="theme-mode__title">{theme} mode activated {theme === "light" ? "🌞" : "🌒"}</h1>
       <div className="user-info__area">
         {loading?<CircularProgress/>:
-        <UserProfile user={user}/>}
+        <UserProfile refetch={refetch} user={user}/>}
       </div>
     </section>
   )

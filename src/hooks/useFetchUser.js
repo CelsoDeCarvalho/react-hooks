@@ -8,6 +8,7 @@ const useFetchUser = () => {
     const [user, setUser] = useState({});
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
+    const [refetching,setRefetching] = useState(false);
 
     //We are fetching api of random user here
     const fetchUserData = async () => {
@@ -22,11 +23,13 @@ const useFetchUser = () => {
             })
     }
 
+    const refetch = () => setRefetching(!refetching);
+
     useEffect(() => {
         fetchUserData()
-    }, [])
+    }, [refetching])
 
-    return { user, loading, error }
+    return { user,refetch, loading, error }
 
 }
 
