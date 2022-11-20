@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './assets/styles/app.css';
 import './assets/styles/colors.css'
 import { MainCard } from './components/MainCard';
@@ -6,11 +6,18 @@ import { ThemeWidget } from './components/ThemeWidget';
 import { ThemeContext } from './context/ThemeContext';
 
 function App() {
-
-  const [theme, setTheme] = useState("light");
+  const localStorageTheme = localStorage.getItem("theme");
+  //Getting localstorage saved theme, if empty,
+  //by default light theme will be passed
+  const [theme, setTheme] = useState(localStorageTheme || "light");
   //Context without state don't work as state management
   //so here I'm creating a theme state and passing it as
   //context value that will be provided to all children
+
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+  }, [theme])
+
   return (
     <ThemeContext.Provider value={{ theme: theme, setTheme: setTheme }}>
       <main className={`app-container ${theme}`}>
