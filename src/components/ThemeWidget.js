@@ -65,8 +65,6 @@ const ThemeWidget = () => {
     }
   }
 
-  console.log(theme)
-
   return (
     <section className='widget-container'>
       <FormControlLabel

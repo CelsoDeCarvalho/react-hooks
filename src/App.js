@@ -1,5 +1,4 @@
-import { useEffect, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import {useState } from 'react';
 import './assets/styles/app.css';
 import './assets/styles/colors.css'
 import { MainCard } from './components/MainCard';
@@ -14,8 +13,6 @@ function App() {
   //Context without state don't work as state management
   //so here I'm creating a theme state and passing it as
   //context value that will be provided to all children
-
-  // const [searchParams, setSearchParams] = useSearchParams();
 
   return (
     <ThemeContext.Provider value={{ theme: theme, setTheme: setTheme }}>

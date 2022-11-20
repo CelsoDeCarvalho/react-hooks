@@ -6,6 +6,9 @@ import { ThemeContext } from "../context/ThemeContext";
 //only if they props change
 const MainCard = memo(() => {
   const {theme} = useContext(ThemeContext);
+
+  //process.env.REACT_APP_URL
+
   return (
     <section className="main-card__container">
       <h1 className="theme-mode__title">{theme} mode activated {theme==="light"?"🌞":"🌒"}</h1>
